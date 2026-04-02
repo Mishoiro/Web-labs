@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laba1</title>
+
+    <!-- <script src="./main.js"> </script>
+    <script src="./a.js" async> </script>
+    <script src="b.js" defer> </script> -->
+
+    <!-- <script>console.log("A->B->C")</script>
+    <script src="a.js"> </script>
+    <script src="b.js"> </script>
+    <script src="c.js"> </script> -->
+
+    <!-- <script>console.log("A/B/C")</script>
+    <script src="a.js" async> </script>
+    <script src="b.js" async> </script>
+    <script src="c.js" async> </script> -->
+
+    <!-- Порядок:
+            abc
+            cba
+            acb
+            abc
+            abc -->
+
+    <!-- <script>console.log("A->B->C")</script>
+    <script src="a.js" defer > </script>
+    <script src="b.js" defer> </script>
+    <script src="c.js" defer> </script> -->
+
+    <script src="a.js"></script>
+    <script src="b.js" async></script>
+    <script src="c.js" defer></script>
+
+    <!-- Порядок:
+            abc
+            abc
+            abc
+            abc
+            abc -->
+  </head>
+  <body>
+    <script>
+      console.log("Inline executed");
+    </script>
+    <script src="main.js"></script>
+    <!-- В результаті порівняння вийшло: "A->B/Main->C"-->
+  </body>
+</html>
